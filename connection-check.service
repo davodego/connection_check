@@ -1,0 +1,6 @@
+[Unit]
+# Execute connection-check 
+
+[Service]
+ExecStart=/PATH/TO/SCRIPT/connection-check.sh
+Description=connection-check
