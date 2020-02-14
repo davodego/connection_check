@@ -13,18 +13,20 @@ A timer unit checks every 5 minutes whether there is a connection via a specific
 1. Copy `connection-check.sh` to the location of your choice.
 2. Open the file `connection-check.sh`
 Change PORT with the number of the port you want to check.
-Change line 14 and add the command or systemd service you want to restart.
+Change line 14 and add the command or systemd service you want to restart and save it.
 3. Copy `connection-check.timer` to `/etc/systemd/system/`
 4. Copy `connection-check.service` to `/etc/systemd/system/`
-5. Restart the systemd daemon with: 
+5. Open `connection-check.service`.
+Change the path in service file to where `connection-check.sh` is and save it.
+6. Restart the systemd daemon with: 
 ```
 systemctl daemon-reload
 ```
-6. Start the timer: 
+7. Start the timer: 
 ```
 systemctl start connection-check.timer
 ```
-7. To start the timer at boot do: 
+8. To start the timer at boot do: 
 ```
 systemctl enable connection-check.timer
 ```
